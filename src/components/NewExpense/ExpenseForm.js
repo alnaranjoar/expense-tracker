@@ -12,7 +12,7 @@ const ExpenseForm = (props) => {
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
-            date: enteredDate,
+            date: new Date(enteredDate),
         }
 
         props.onSaveExpenseData(expenseData)
@@ -21,43 +21,6 @@ const ExpenseForm = (props) => {
         setEnteredDate('')
         setEnteredTitle('')
     }
-
-    // const [userInput, setUserInput] = useState({
-    //     enteredTitle: '',
-    //     enteredAmount: '',
-    //     enteredDate: '',
-    // })
-
-    // const titleChangeHandler = (event) => {
-    //     setEnteredTitle(event.target.value) //-> Esta se utiliza cuando uso un useState por variable
-
-    //     // setUserInput({
-    //     //     ...userInput,
-    //     //     enteredTitle: event.target.value,
-    //     // }) -> Esta se utiliza cuando uso un único useState para todas las variables. NO ES LA FORMA MÁS RECOMENDADA DE HACERLO
-
-    //     // setUserInput((prevState) => {
-    //     //     return(
-    //     //         {...prevState, enteredTitle: event.target.value}
-    //     //     )
-    //     // }) -> Esta sería la mejor forma de hacerlo porque asegura que siempre vamos a estar actualizando valores sobre la última actualización disponible.
-    // }
-
-    // const amountChangeHandler = (event) => {
-    //     setEnteredAmount(event.target.value)
-    //     // setUserInput({
-    //     //     ...userInput,
-    //     //     enteredAmount: event.target.value,
-    //     // })
-    // }
-
-    // const dateChangeHandler = (event) => {
-    //     setEnteredDate(event.target.value)
-    //     // setUserInput({
-    //     //     ...userInput,
-    //     //     enteredDate: event.target.value,
-    //     // })
-    // }
 
     const inputChangeHandler = (identifier, value) => {
         if(identifier === 'title') {
